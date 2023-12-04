@@ -24,7 +24,7 @@ class RandomizedSet:
         self.current_vals[idx] = lastVal
         self.current_vals.pop()
         self.numMap[lastVal] = idx
-        
+        del self.numMap[val]
         return True
 
     def getRandom(self) -> int:
