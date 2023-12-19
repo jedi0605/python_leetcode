@@ -19,7 +19,7 @@ class test_MinimumSizeSubarraySum(unittest.TestCase):
         solution = Solution()
         nums = [1,1,1,1,1,1,1,1]
         target = 11
-        assert solution.minSubArrayLen(target, nums) == 1
+        assert solution.minSubArrayLen(target, nums) == 0
 
 
 if __name__ == "__main__":
