@@ -9,9 +9,9 @@ class Solution:
         while l < r:
             tmp = (r - l) * min(height[l], height[r])
             maxA = max(maxA, tmp)
-            if(l<r):
-                l+=1
+            if height[l] < height[r]:
+                l += 1
             else:
-                r-=1
-                
+                r -= 1
+
         return maxA
