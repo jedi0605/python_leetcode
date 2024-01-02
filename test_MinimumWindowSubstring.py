@@ -18,6 +18,14 @@ class test_MinimumWindowSubstring(unittest.TestCase):
         res = solution.minWindow2(s,t)        
         ans = "BANC"
         assert res == ans
+        
+    def test_case3(self):        
+        solution = Solution()
+        s = "ADOBECODEBANC"
+        t = "ABC"
+        res = solution.minWindow3(s,t)        
+        ans = "BANC"
+        assert res == ans
 
 
 if __name__ == "__main__":
