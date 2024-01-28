@@ -17,7 +17,9 @@ class Solution:
             right -= 1
 
             # [1,2,3]
-            if not (left < right and top < botton):
+            # if not (left < right and top < botton):
+            #     break
+            if left>=right or top>=botton:
                 break
             # right to left
             for i in range(right - 1, left - 1, -1):
