@@ -1,5 +1,5 @@
 """_summary_
-Leetcode 20. Valid Parentheses
+Leetcode 20. Valid Parentheses. using stack to track parentheses.
 #Leetcode150
 
 Time:O(n)
