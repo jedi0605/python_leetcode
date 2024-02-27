@@ -1,7 +1,7 @@
 # Definition for singly-linked list.
 class ListNode:
-    def __init__(self, x):
-        self.val = x
+    def __init__(self, val=0):
+        self.val = val
         self.next = None
 
     @staticmethod
@@ -28,8 +28,10 @@ class ListNode:
             head1 = head1.next
             head2 = head2.next
         return True
+
+
 class Node:
-    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+    def __init__(self, x: int, next: "Node" = None, random: "Node" = None):
         self.val = int(x)
         self.next = next
         self.random = random
