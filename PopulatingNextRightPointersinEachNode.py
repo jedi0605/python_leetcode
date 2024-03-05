@@ -10,7 +10,6 @@ if curr have next, deal with 2 connect to 3
 curr = curr.next # curr from 2 move to 3
 if curr == null
     # move to next layer
-    
 
 Inorder left side is tree left, other is right
 #Leetcode150
