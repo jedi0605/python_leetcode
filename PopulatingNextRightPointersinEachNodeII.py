@@ -2,6 +2,8 @@
 LeetCode 117. Populating Next Right Pointers in Each Node II
 BFS search. two pointer pre, curr if pre!=null pre.next = curr
 Using O(n) O(n)
+For mem O(1)
+dummy, tmp to track each level head
 #Leetcode150
 Time:O(n)
 Space:O(n)
