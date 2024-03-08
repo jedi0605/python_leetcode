@@ -1,7 +1,6 @@
 """_summary
-LeetCode 114. Flatten Binary Tree to Linked List
-V1. Using Stack to build flat tree. Time O(n) Space O(n)
-V2. Using while loop. find each left tree's right most node. and re-connect to the tree
+LeetCode 112. Path Sum
+V1. Using Stack to track sum
 #Leetcode150
 Time:O(n)
 Space:O(n)
