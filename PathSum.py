@@ -1,0 +1,31 @@
+"""_summary
+LeetCode 114. Flatten Binary Tree to Linked List
+V1. Using Stack to build flat tree. Time O(n) Space O(n)
+V2. Using while loop. find each left tree's right most node. and re-connect to the tree
+#Leetcode150
+Time:O(n)
+Space:O(n)
+"""
+
+from collections import deque
+from typing import List, Optional
+
+from TreeNode import TreeNode
+
+
+class Solution:
+    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+        return self._dfs(root, targetSum, 0)
+
+    def _dfs(self, root: TreeNode, targetSum, curSum):
+        if root == None:
+            return False
+
+        curSum += root.val
+        if root.left == None and root.right == None:
+            return curSum == targetSum
+
+        resLeft = self._dfs(root.left, targetSum, curSum)
+        resRight = self._dfs(root.right, targetSum, curSum)
+
+        return resLeft or resRight
