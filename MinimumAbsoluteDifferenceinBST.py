@@ -1,6 +1,6 @@
 """_summary
 530. Minimum Absolute Difference in BST
-BFS. Travel each level. Setting a boolen to controll left->right or right->legt
+BFS. Travel each level.Using inorder , set pre node. abs(pre - curr)
 #Leetcode150
 Time:O(n)
 Space:O(n)
