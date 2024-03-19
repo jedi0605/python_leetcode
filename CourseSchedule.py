@@ -1,6 +1,6 @@
 """_summary
 Leetcode 207.Course Schedule
-
+Ref. https://www.youtube.com/watch?v=EUDwWbvtB_Q&ab_channel=AlgoEngine
 #Leetcode150
 Time:O(n)
 Space:O(n)
