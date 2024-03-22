@@ -15,11 +15,5 @@ class SnakesandLadders_test(unittest.TestCase):
         ]
         assert sol.snakesAndLadders(board) == 4
 
-    def test_case2(self):
-        solution = Solution()
-        matrix = [[1, 2, 3, 4]]
-        assert solution.spiralOrder(matrix) == [1, 2, 3, 4]
-
-
 if __name__ == "__main__":
     unittest.main()
