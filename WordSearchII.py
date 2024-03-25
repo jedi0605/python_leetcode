@@ -50,6 +50,7 @@ class Solution:
             or i == self.ROW
             or j == self.COL
             or board[i][j] not in node.children
+            or (i,j) in self.visited
         ):
             return False
 
