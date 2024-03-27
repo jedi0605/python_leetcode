@@ -15,19 +15,18 @@ class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
 
-        # i is index of candidates.
-        def dfs(i, cur: List[int], total: int):
-            if total == target:
-                res.append(cur.copy())
+        def backtracking(idx, arr, sum):
+            if sum == target:
+                res.append(arr.copy())
                 return
-            if i >= len(candidates) or total > target:
+            if idx >= len(candidates) or sum > target:
                 return
-            cur.append(candidates[i])
-            dfs(i, cur, total + candidates[i])
-            cur.pop()
-            dfs(i + 1, cur, total)
+            arr.append(candidates[idx])
+            backtracking(idx, arr, sum + candidates[idx])
+            arr.pop()
+            backtracking(idx + 1, arr, sum)  # just move to next idx, so sum not change.
 
-        dfs(0, [], 0)
+        backtracking(0, [], 0)
         return res
 
         # res = []

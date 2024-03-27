@@ -17,18 +17,17 @@ class Solution:
         res = []
         stack = []
 
-        def backtracking(openN, closeN):
+        def backtracking(openN, closeN, cur):
             if closeN == n:
-                res.append("".join(stack))
-                return
+                res.append("".join(cur))
             if openN < n:
-                stack.append("(")
-                backtracking(openN + 1, closeN)
-                stack.pop()
-            if closeN < openN:
-                stack.append(")")
-                backtracking(openN, closeN + 1)
-                stack.pop()
+                cur.append("(")
+                backtracking(openN + 1, closeN, cur)
+                cur.pop()
+            if openN > closeN:
+                cur.append(")")
+                backtracking(openN, closeN + 1, cur)
+                cur.pop()
 
-        backtracking(0, 0)
+        backtracking(0, 0, stack)
         return res
