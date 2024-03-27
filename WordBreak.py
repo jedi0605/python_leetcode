@@ -1,12 +1,8 @@
 """_summary_
-Leetcode 212 - WordSearch
-Using dfs backtracking 
-#Leetcode150
-Time: m* N * 4^l
-l = word length
-Search: O 4^l
-Board: m*n
-Space:O(m*n)
+Leetcode 139. Word Break
+Using backtracking or BFS also words
+Time: m * N * N
+SPACE: O(n)
 """
 
 from collections import defaultdict, deque
@@ -15,26 +11,37 @@ from typing import List
 
 
 class Solution:
-    """DFS version. will time out."""
+     # Queue ver
+    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
+        q = deque([s])
+        visited = set()
+        while q:
+            word = q.popleft()
 
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        memo = {}
-
-        def help(idx) -> bool:
-            print(idx)
-            if idx == len(s):
-                return True
-            if idx in memo:
-                return memo[idx]
-
-            for word in wordDict:
-                wordL = len(word)
-                subS = s[idx : idx + wordL]
-                print(subS)
-                if subS == word and help(idx + wordL):
-                    memo[idx] = True
+            if word in visited:
+                continue
+            else:
+                if word == "":
                     return True
-            memo[idx] = False
-            return False
+                visited.add(word)
+                for start_word in wordDict:
+                    if word.startswith(start_word):
+                        q.append(word[len(start_word) :])
+        return False
+        # T : O(L) * O(N) * O(N)
+    # Backtracking ver
+    # def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
+    #     res = []
+    #     memo = {}
 
-        return help(0)
+    #     def helper(string: str):
+    #         if string in memo:
+    #             return memo[string]
+    #         if not string:
+    #             return [""]
+    #         local = []
+    #         for word in wordDict:
+    #             if string.startswith(word):
+    #                 subword = helper(string[len(word) :])
+
+    #     return res
