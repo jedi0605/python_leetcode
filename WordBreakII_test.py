@@ -1,3 +1,4 @@
+import collections
 import unittest
 from WordBreakII import Solution
 
@@ -10,6 +11,14 @@ class WordBreak_test(unittest.TestCase):
         res = solution.wordBreak(s, wordDict)
         ans = ["cat sand dog", "cats and dog"]
         self.assertSequenceEqual(res, ans)
+
+    def test_case2(self):
+        res = []
+        s = "test123123123"
+        q = collections.deque()
+        q.append((s, []))
+
+        string, arr = q.popleft()
 
 
 def are_matrices_equal(matrix1, matrix2):

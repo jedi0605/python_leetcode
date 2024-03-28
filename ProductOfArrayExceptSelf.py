@@ -27,3 +27,21 @@ class Solution:
            res[i] = B * forward[i]
            B = B * nums[i]         
         return res
+
+    def productExceptSelf3(self, nums:List[int])-> List[int]:
+        res = [0] * len(nums)
+        preProduct = 1
+        
+        # Populate result array with prefix product
+        for i,v in enumerate(nums):
+            res[i] = preProduct
+            preProduct *= v
+
+        postProduct = 1
+        
+        # Multiply result array with postfix product
+        for i in range(len(nums)-1, -1, -1):
+            res[i] *= postProduct
+            postProduct *= nums[i]
+
+        return res
