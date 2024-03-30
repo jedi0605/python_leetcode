@@ -20,9 +20,8 @@ class Solution:
         for i in range(1, len(nums)):
             for j in range(0, i):
                 if nums[i] > nums[j]:
-                    dp[i] = max(
-                        dp[i], dp[j] + 1
-                    )  # cur index is i, j is looking for big seq nums.
+                    dp[i] = max(dp[i], dp[j] + 1)
+                    # cur index is i, j is looking for big seq nums.
         return max(dp)
 
     def lengthOfLIS2(self, nums: List[int]) -> int:
