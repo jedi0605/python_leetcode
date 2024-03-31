@@ -4,7 +4,7 @@ import random
 from typing import List
 
 """_summary_
-LeetCode 400 Nth Digit
+LeetCode 400 Nth Digit 
 
 #Leetcode150
 Time:O(n^2)
