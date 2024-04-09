@@ -4,7 +4,7 @@ import math
 
 """_summary_
 LeetCode 875. Koko Eating Bananas
-T: O (nlog(n)) by sort
+T: O (n * max(pile))# brute force. O(n* log(maxPiles))
 S: O(1)
 #Meta Tag
 """
@@ -20,7 +20,7 @@ class Solution:
                 
         l = 1
         r = max(piles)
-
+        # 1 2 3 4 5 6 7 8 9 10 11
         while l < r:
             k = (l + r) // 2  # one time eat number
             
