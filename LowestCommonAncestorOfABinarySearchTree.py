@@ -14,17 +14,19 @@ from typing import List, Optional
 
 from TreeNode import TreeNode
 
+
 class Solution:
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+    def lowestCommonAncestor(
+        self, root: "TreeNode", p: "TreeNode", q: "TreeNode"
+    ) -> "TreeNode":
         if not root:
             return
         pV = p.val
         qV = q.val
         rV = root.val
-        if rV > pV and rV>qV:
-            return self.lowestCommonAncestor(root.left,p,q)
-        elif rV<pV and rV<qV:
-            return self.lowestCommonAncestor(root.right,p,q)
+        if rV > pV and rV > qV:
+            return self.lowestCommonAncestor(root.left, p, q)
+        elif rV < pV and rV < qV:
+            return self.lowestCommonAncestor(root.right, p, q)
         else:
             return root
-        
