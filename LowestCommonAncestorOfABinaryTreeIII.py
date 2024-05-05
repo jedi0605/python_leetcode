@@ -1,8 +1,5 @@
 """_summary
 1650. Lowest Common Ancestor of a Binary Tree III
-
-Time:O(n)
-Space:O(n)
 """
 
 from collections import deque
