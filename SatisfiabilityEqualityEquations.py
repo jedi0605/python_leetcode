@@ -15,7 +15,7 @@ class Solution:
 
         def find(x):
             res = x
-            while res != root[x]:
+            while res != root[res]:
                 res = root[res]
             return res
 
