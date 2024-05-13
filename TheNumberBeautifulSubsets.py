@@ -4,9 +4,6 @@ from typing import List
 
 """_summary
 LeetCode 2597. The Number of Beautiful Subsets
-DFS , BFS can do in O(n) time.
-IF want to less than O(n)
-Find sub complete binary tree and using 2^n - 1
 #Leetcode150
 Time:O(n)
 Space:O(n)
@@ -15,20 +12,22 @@ Space:O(n)
 
 class Solution:
     def beautifulSubsets(self, nums: List[int], k: int) -> int:
-        freq = defaultdict(int)
-        nums.sort()
-        
-        def backtracking(i: int):
-            if i == len(nums):
-                return 1
-            res = backtracking(i + 1)
-            if nums[i] - k not in freq:
-                freq[nums[i]] += 1
-                res += backtracking(i + 1)
-                print(freq)
-                freq[nums[i]] -= 1
-                if freq[nums[i]] == 0:
-                    del freq[nums[i]]
-            return res
+        illegal = defaultdict(int)
+        self.count = 0        
 
-        return backtracking(0) - 1
+        def backtracking(idx):
+            if idx == len(nums):
+                self.count += 1
+                return
+
+            x = nums[idx]
+            if illegal[x] == 0:
+                illegal[x - k] += 1
+                illegal[x + k] += 1
+                backtracking(idx + 1)
+                illegal[x - k] -= 1
+                illegal[x + k] -= 1
+            backtracking(idx + 1)
+
+        backtracking(0)
+        return self.count - 1

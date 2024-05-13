@@ -24,8 +24,8 @@ class Solution:
                 digLog.append(l)
             else:
                 letterLog.append(l)
-        letterLog.sort(key=lambda x: x.split(" ")[0])
-        letterLog.sort(key=lambda x: x.split(" ")[1:])
+        letterLog.sort(key=lambda x: (x.split(" ")[1:], x.split(" ")[0]))
+        # letterLog.sort(key=lambda x: )
         
         return letterLog + digLog
     
