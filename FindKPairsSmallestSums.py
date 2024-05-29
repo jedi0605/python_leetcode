@@ -1,5 +1,6 @@
 """_summary
-373. Find K Pairs with Smallest Sums#Leetcode150
+373. Find K Pairs with Smallest Sums
+#Leetcode150
 Time:O(log(m*n))
 Space:O(1)
 """
