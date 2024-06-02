@@ -10,7 +10,7 @@ from typing import List
 class Solution:
     def mySqrt(self, x: int) -> int:
         if x < 2:
-            return X
+            return x
         left, right = 2, x // 2
 
         while left <= right:
