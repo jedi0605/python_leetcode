@@ -13,7 +13,7 @@ Space:O(1)
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
         if obstacleGrid[0][0] == 1:
-            return -1
+            return 0
         row = len(obstacleGrid)
         col = len(obstacleGrid[0])
         # row [1,0,1,0] turn in to blow
