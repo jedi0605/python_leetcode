@@ -12,6 +12,10 @@ class LongestPalindromicSubstring_test(unittest.TestCase):
         solution = Solution()
         s = "babad"
         assert solution.longestPalindrome(s) == "aba"
+    def test_case3(self):
+        solution = Solution()
+        s = "a"
+        assert solution.longestPalindrome(s) == "a"
 
 
 if __name__ == "__main__":
