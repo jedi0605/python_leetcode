@@ -3,7 +3,7 @@ from typing import List
 """_summary_
 80. Remove Duplicates from Sorted Array II
 #Leetcode150
-Time:O()
+Time:O(n^2)
 Space:O(1)
 """
 

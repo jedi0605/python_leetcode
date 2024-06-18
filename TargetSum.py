@@ -10,6 +10,20 @@ S: O(1)
 
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
+        self.cashe = {}
+
+        def backtracking(idx, curr):
+            if idx == len(nums):
+                return 1 if curr == target else 0
+            if (idx, curr) in self.cashe:
+                return self.cashe[(idx, curr)]
+            pos = backtracking(idx + 1, curr + nums[idx])
+            nag = backtracking(idx + 1, curr - nums[idx])
+            self.cashe[(idx, curr)] = pos + nag
+            return self.cashe[(idx, curr)]
+        backtracking(0, 0)
+        return self.cashe[(0,0)]
+
         self.res = 0
         tmp = []
 
@@ -26,6 +40,7 @@ class Solution:
             tmp.append(-nums[idx])
             backtracking(idx + 1, curr - nums[idx])
             tmp.pop()
+
         backtracking(0, 0)
         return self.res
         # self.res = 0
