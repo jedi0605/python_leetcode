@@ -15,6 +15,12 @@ class test_JumpGame(unittest.TestCase):
         res = solution.canJump(nums)
         self.assertEqual(res, False)
 
+    def test_case3(self):
+        solution = Solution()
+        nums = [1, 0, 1, 0]
+        res = solution.canJump(nums)
+        self.assertEqual(res, False)
+
 
 if __name__ == "__main__":
     unittest.main()
