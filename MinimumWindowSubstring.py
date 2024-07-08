@@ -1,7 +1,36 @@
 from collections import Counter
+from collections import defaultdict
 
 
 class Solution:
+    def minWindow4(self, s: str, t: str) -> str:
+        if t == "":
+            return ""
+        countT = defaultdict(int)
+        window = defaultdict(int)
+        for i in t:
+            countT[i] += 1
+        # increase compare countT and window. If window satisfy count of countT have+1
+        have, need = 0, len(countT)
+        res, resLen = [-1, -1], float("inf")
+        l = 0
+        for r in range(len(s)):
+            c = s[r]
+            window[c] += 1
+            if c in countT and countT[c] == window[c]:
+                have += 1
+            while have == need:  # delete from the top
+                # update res
+                if r - l + 1 < resLen:
+                    resLen = r - l + 1
+                    res = [l, r]
+                window[s[l]] -= 1
+                if s[l] in countT and window[s[l]] < countT[s[l]]:
+                    have -= 1
+                l += 1
+        l, r = res
+        return s[l : r + 1] if resLen < float("inf") else ""
+
     def minWindow3(self, s: str, t: str) -> str:
         if t == "":
             return ""

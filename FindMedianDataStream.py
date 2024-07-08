@@ -1,5 +1,5 @@
 """_summary
-373. Find K Pairs with Smallest Sums
+295. Find Median from Data Stream
 #Leetcode150
 Time:O(log(m*n))
 Space:O(1)
